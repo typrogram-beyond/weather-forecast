@@ -4,6 +4,8 @@
 function getWeatherForecast() {
     // This is the locationId for Sligo
     var locationId = '102961423';
+    // This is the locationName for Sligo
+    var locationName = "Sligo";
 
     // We need to set a few things here, to make sure our API works. Don't change these options, or you'll break it!
     var options = {
@@ -15,6 +17,9 @@ function getWeatherForecast() {
     };
 
     // This is where we fetch the data from our API.
+    // This is the API to call when you want to get the locationId for a place.
+    // fetch('https://foreca-weather.p.rapidapi.com/location/search/' + locationName , options)
+    // This is the API to call when you want to get the weather data for a locationId.
     fetch('https://foreca-weather.p.rapidapi.com/current/' + locationId + '?alt=0&tempunit=C&windunit=MS&tz=Europe%2FLondon&lang=en', options)
       .then(response => response.json())
       .then(data => {
